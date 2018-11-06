@@ -1,19 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="240dp"
+        android:layout_height="255dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="8dp">
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:srcCompat="@drawable/body" />
+
+        <ImageView
+            android:id="@+id/imgArms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/arms" />
+
+        <ImageView
+            android:id="@+id/imgEars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ears" />
+
+        <ImageView
+            android:id="@+id/imgBrows"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/eyebrows" />
+
+        <ImageView
+            android:id="@+id/imgEyes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/eyes" />
+
+        <ImageView
+            android:id="@+id/imgGlasses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/glasses" />
+
+        <ImageView
+            android:id="@+id/imgHat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/hat" />
+
+        <ImageView
+            android:id="@+id/imgMouth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/mouth" />
+
+        <ImageView
+            android:id="@+id/imgMoustache"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/mustache" />
+
+        <ImageView
+            android:id="@+id/imgNose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/nose" />
+
+        <ImageView
+            android:id="@+id/imgShoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/shoes" />
+    </FrameLayout>
+
+    <CheckBox
+        android:id="@+id/Hat"
+        android:layout_width="92dp"
+        android:layout_height="33dp"
+        android:checked="false"
+        android:clickable="true"
+        android:onClick="checkClicked"
+        android:text="Hat"
+        app:layout_constraintBottom_toTopOf="@+id/Eyes"
+        app:layout_constraintEnd_toStartOf="@+id/Brows"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
+
+    <CheckBox
+        android:id="@+id/Eyes"
+        android:layout_width="92dp"
+        android:layout_height="33dp"
+        android:checked="false"
+        android:clickable="true"
+        android:onClick="checkClicked"
+        android:text="Eyes"
+        app:layout_constraintBottom_toTopOf="@+id/Ears"
+        app:layout_constraintEnd_toStartOf="@+id/Glasses"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Hat" />
+
+    <CheckBox
+        android:id="@+id/Ears"
+        android:layout_width="92dp"
+        android:layout_height="33dp"
+        android:checked="false"
+        android:clickable="true"
+        android:onClick="checkClicked"
+        android:text="Ears"
+        app:layout_constraintBottom_toTopOf="@+id/Nose"
+        app:layout_constraintEnd_toStartOf="@+id/Arms"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Eyes" />
+
+    <CheckBox
+        android:id="@+id/Nose"
+        android:layout_width="93dp"
+        android:layout_height="33dp"
+        android:checked="false"
+        android:clickable="true"
+        android:onClick="checkClicked"
+        android:text="Nose"
+        app:layout_constraintBottom_toTopOf="@+id/Mouth"
+        app:layout_constraintEnd_toStartOf="@+id/Moustache"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Ears" />
+
+    <CheckBox
+        android:id="@+id/Brows"
+        android:layout_width="91dp"
+        android:layout_height="30dp"
+        android:checked="true"
+        android:clickable="true"
+        android:onClick="checkClicked"
+        android:text="Brows"
+        app:layout_constraintBottom_toTopOf="@+id/Glasses"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Hat"
+        app:layout_constraintStart_toStartOf="@+id/Glasses"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
+
+    <CheckBox
+        android:id="@+id/Glasses"
+        android:layout_width="91dp"
+        android:layout_height="30dp"
+        android:checked="false"
+        android:clickable="true"
+        android:onClick="checkClicked"
+        android:text="Glasses"
+        app:layout_constraintBottom_toTopOf="@+id/Arms"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Eyes"
+        app:layout_constraintStart_toStartOf="@+id/Arms"
+        app:layout_constraintTop_toBottomOf="@+id/Brows" />
+
+    <CheckBox
+        android:id="@+id/Arms"
+        android:layout_width="89dp"
+        android:layout_height="30dp"
+        android:checked="false"
+        android:clickable="true"
+        android:onClick="checkClicked"
+        android:text="Arms"
+        app:layout_constraintBottom_toTopOf="@+id/Moustache"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Ears"
+        app:layout_constraintStart_toStartOf="@+id/Moustache"
+        app:layout_constraintTop_toBottomOf="@+id/Glasses" />
+
+    <CheckBox
+        android:id="@+id/Moustache"
+        android:layout_width="111dp"
+        android:layout_height="32dp"
+        android:checked="false"
+        android:clickable="true"
+        android:onClick="checkClicked"
+        android:text="Moustache"
+        app:layout_constraintBottom_toTopOf="@+id/Shoes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Nose"
+        app:layout_constraintStart_toStartOf="@+id/Shoes"
+        app:layout_constraintTop_toBottomOf="@+id/Arms" />
+
+    <CheckBox
+        android:id="@+id/Mouth"
+        android:layout_width="94dp"
+        android:layout_height="31dp"
+        android:checked="false"
+        android:clickable="true"
+        android:onClick="checkClicked"
+        android:text="Mouth"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Shoes"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Nose" />
+
+    <CheckBox
+        android:id="@+id/Shoes"
+        android:layout_width="92dp"
+        android:layout_height="32dp"
+        android:checked="false"
+        android:clickable="true"
+        android:onClick="checkClicked"
+        android:text="Shoes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Mouth"
+        app:layout_constraintTop_toBottomOf="@+id/Moustache" />
 </android.support.constraint.ConstraintLayout>
