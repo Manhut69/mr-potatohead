@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void checkClicked(android.view.View v) {
         CheckBox checkbox = (CheckBox) v;
-        Log.d(checkbox.getText().toString(), "onClick hat");
+        Log.d(checkbox.getText().toString(), "Clicked");
 
         boolean checked = checkbox.isChecked();
 
@@ -120,4 +120,3 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
-
