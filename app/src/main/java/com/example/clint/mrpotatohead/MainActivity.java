@@ -1,3 +1,9 @@
+/*
+  A 'mister potato head' application by Clint Nieuwendijk
+  The app implements a dress up game by toggling the visibility of pictures of the body parts
+
+ */
+
 package com.example.clint.mrpotatohead;
 
 import android.os.Bundle;
@@ -10,18 +16,25 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
+    // create arraylist of all the buttons
+    List<Integer> buttons = new ArrayList<>(Arrays.asList(R.id.imgGlasses, R.id.imgBrows,
+                                                      R.id.imgEyes, R.id.imgShoes, R.id.imgEars,
+                                                      R.id.imgMoustache, R.id.imgArms, R.id.imgHat,
+                                                      R.id.imgMouth, R.id.imgNose));
+    // intitialize all buttons and pictures
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if(savedInstanceState != null) {
-            List<Integer> buttons = new ArrayList<>(Arrays.asList(R.id.imgGlasses, R.id.imgBrows, R.id.imgEyes, R.id.imgShoes, R.id.imgEars, R.id.imgMoustache, R.id.imgArms, R.id.imgHat, R.id.imgMouth, R.id.imgNose));
             for(int i = 0; i < 10; i++) {
                 ImageView img = findViewById(buttons.get(i));
-                if(savedInstanceState.getIntegerArrayList("buttons").get(i) == 1) {
+                if(Objects.requireNonNull(savedInstanceState.getIntegerArrayList("buttons"))
+                                                            .get(i) == 1) {
                     img.setVisibility(View.VISIBLE);
                 }
                 else{
@@ -31,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // save instance when app closes or rotates
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         ArrayList<Integer> buttonStates = new ArrayList<>();
-        List<Integer> buttons = new ArrayList<>(Arrays.asList(R.id.Glasses, R.id.Brows, R.id.Eyes, R.id.Shoes, R.id.Ears, R.id.Moustache, R.id.Arms, R.id.Hat, R.id.Mouth, R.id.Nose));
         for(int i = 0; i < 10; i++) {
             CheckBox box = findViewById(buttons.get(i));
             if(box.isChecked()) {
@@ -48,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    // check which button was clicked and toggle visibility on corresponding image
     public void checkClicked(android.view.View v) {
         CheckBox checkbox = (CheckBox) v;
         Log.d(checkbox.getText().toString(), "Clicked");
